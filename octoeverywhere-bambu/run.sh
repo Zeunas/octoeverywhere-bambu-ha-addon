@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -e
 
+# Read HA options
 CONFIG=/data/options.json
 
 COMPANION_MODE=$(jq -r '.COMPANION_MODE' "$CONFIG")
@@ -17,9 +18,9 @@ echo "=================================================="
 
 mkdir -p /data
 
-exec env \
-  COMPANION_MODE="$COMPANION_MODE" \
-  PRINTER_IP="$PRINTER_IP" \
-  ACCESS_CODE="$ACCESS_CODE" \
-  SERIAL_NUMBER="$SERIAL_NUMBER" \
-  /entrypoint.sh
+# Execute the original entrypoint with injected env
+COMPANION_MODE="$COMPANION_MODE" \
+PRINTER_IP="$PRINTER_IP" \
+ACCESS_CODE="$ACCESS_CODE" \
+SERIAL_NUMBER="$SERIAL_NUMBER" \
+/entrypoint.sh
