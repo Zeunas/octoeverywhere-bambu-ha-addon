@@ -1,9 +1,10 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.3.2
-FROM octoeverywhere/octoeverywhere:latest
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-RUN apk add --no-cache jq
+# Install docker-cli inside addon container (needed for run.sh spawning)
+RUN apk add --no-cache docker-cli bash
 
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
 
-ENTRYPOINT [ "/run.sh" ]
+CMD [ "/run.sh" ]
