@@ -14,7 +14,7 @@ options:
   SERIAL_NUMBER: ""
   PRINTER_IP: ""
 schema:
-  COMPANION_MODE: list(bambu|elegoo|klipper)
+  COMPANION_MODE: str
   ACCESS_CODE: str
   SERIAL_NUMBER: str
   PRINTER_IP: str
