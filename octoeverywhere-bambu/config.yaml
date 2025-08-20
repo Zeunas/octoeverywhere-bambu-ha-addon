@@ -1,27 +1,20 @@
 name: "OctoEverywhere Bambu"
-version: "0.1.0"
+version: "1.0.0"
 slug: "octoeverywhere_bambu"
-description: "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer"
+description: "Run OctoEverywhere Bambu Companion in Home Assistant"
+url: "https://github.com/Zeunas/octoeverywhere-ha-addon"
 arch:
   - amd64
-  - armv7
   - aarch64
 startup: services
 boot: auto
-
-# Using Dockerfile build
-build:
-  context: .
-  dockerfile: Dockerfile
-
 options:
   COMPANION_MODE: bambu
-  PRINTER_IP: ""
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
-
+  PRINTER_IP: ""
 schema:
-  COMPANION_MODE: str
-  PRINTER_IP: str
+  COMPANION_MODE: list(bambu|elegoo|klipper)
   ACCESS_CODE: str
   SERIAL_NUMBER: str
+  PRINTER_IP: str
