@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
-exec /entrypoint.sh \
-  --mode "${COMPANION_MODE}" \
-  --ip "${PRINTER_IP}" \
-  --access "${ACCESS_CODE}" \
-  --serial "${SERIAL_NUMBER}"
+set -e
+
+CONFIG=/data/options.json
+
+COMPANION_MODE=$(jq -r '.COMPANION_MODE' "$CONFIG")
+PRINTER_IP=$(jq -r '.PRINTER_IP' "$CONFIG")
+ACCESS_CODE=$(jq -r '.ACCESS_CODE' "$CONFIG")
+SERIAL_NUMBER=$(jq -r '.SERIAL_NUMBER' "$CONFIG")
+
+echo "=============== OctoEverywhere ENV ==============="
+echo "COMPANION_MODE=$COMPANION_MODE"
+echo "PRINTER_IP=$PRINTER_IP"
+echo "ACCESS_CODE=$ACCESS_CODE"
+echo "SERIAL_NUMBER=$SERIAL_NUMBER"
+echo "=================================================="
+
+mkdir -p /data
+
+exec env \
+  COMPANION_MODE="$COMPANION_MODE" \
+  PRINTER_IP="$PRINTER_IP" \
+  ACCESS_CODE="$ACCESS_CODE" \
+  SERIAL_NUMBER="$SERIAL_NUMBER" \
+  /entrypoint.sh
