@@ -1,1 +1,0 @@
-FROM octoeverywhere/octoeverywhere:latest
