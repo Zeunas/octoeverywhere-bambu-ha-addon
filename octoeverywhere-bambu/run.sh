@@ -1,12 +1,19 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bashio
+# Run OctoEverywhere Bambu for a single printer
+
 set -e
 
-export COMPANION_MODE="${COMPANION_MODE}"
-export PRINTER1_IP="${PRINTER1_IP}"
-export PRINTER1_ACCESS_CODE="${PRINTER1_ACCESS_CODE}"
-export PRINTER1_SERIAL_NUMBER="${PRINTER1_SERIAL_NUMBER}"
-export PRINTER2_IP="${PRINTER2_IP}"
-export PRINTER2_ACCESS_CODE="${PRINTER2_ACCESS_CODE}"
-export PRINTER2_SERIAL_NUMBER="${PRINTER2_SERIAL_NUMBER}"
+# Export environment variables from HAOS options
+export COMPANION_MODE="$(bashio::config 'COMPANION_MODE')"
+export PRINTER_IP="$(bashio::config 'PRINTER_IP')"
+export ACCESS_CODE="$(bashio::config 'ACCESS_CODE')"
+export SERIAL_NUMBER="$(bashio::config 'SERIAL_NUMBER')"
 
-exec /path/to/octoeverywhere-binary
+echo "Starting OctoEverywhere for printer at $PRINTER_IP..."
+
+# Run the OctoEverywhere container entrypoint
+exec /entrypoint.sh \
+    --mode "$COMPANION_MODE" \
+    --ip "$PRINTER_IP" \
+    --access "$ACCESS_CODE" \
+    --serial "$SERIAL_NUMBER"
