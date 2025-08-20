@@ -1,6 +1,6 @@
 name: "OctoEverywhere Companion"
 version: "2.0.0"
-slug: "octoeverywhere"
+slug: "octoeverywhere-bambu"
 description: "OctoEverywhere Companion for Bambu printers."
 arch:
   - amd64
