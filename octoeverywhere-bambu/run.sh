@@ -1,36 +1,12 @@
-#!/usr/bin/env bashio
-# OctoEverywhere Bambu Add-on - Multi-printer support
+#!/usr/bin/with-contenv bashio
+set -e
 
-export COMPANION_MODE="bambu"
+export COMPANION_MODE="${COMPANION_MODE}"
+export PRINTER1_IP="${PRINTER1_IP}"
+export PRINTER1_ACCESS_CODE="${PRINTER1_ACCESS_CODE}"
+export PRINTER1_SERIAL_NUMBER="${PRINTER1_SERIAL_NUMBER}"
+export PRINTER2_IP="${PRINTER2_IP}"
+export PRINTER2_ACCESS_CODE="${PRINTER2_ACCESS_CODE}"
+export PRINTER2_SERIAL_NUMBER="${PRINTER2_SERIAL_NUMBER}"
 
-# Function to start one OctoEverywhere instance
-start_printer() {
-  local printer_ip=$1
-  local access_code=$2
-  local serial=$3
-  local printer_name=$4
-
-  if [ -n "$printer_ip" ]; then
-    echo "Starting OctoEverywhere for $printer_name..."
-    /entrypoint.sh \
-      --mode "$COMPANION_MODE" \
-      --ip "$printer_ip" \
-      --access "$access_code" \
-      --serial "$serial" &
-  fi
-}
-
-# Start Printer 1
-start_printer "$(bashio::config 'PRINTER1_IP')" \
-              "$(bashio::config 'PRINTER1_ACCESS_CODE')" \
-              "$(bashio::config 'PRINTER1_SERIAL_NUMBER')" \
-              "Printer1"
-
-# Start Printer 2
-start_printer "$(bashio::config 'PRINTER2_IP')" \
-              "$(bashio::config 'PRINTER2_ACCESS_CODE')" \
-              "$(bashio::config 'PRINTER2_SERIAL_NUMBER')" \
-              "Printer2"
-
-# Keep the container alive
-wait
+exec /path/to/octoeverywhere-binary
