@@ -15,7 +15,7 @@ build:
   dockerfile: Dockerfile
 
 options:
-  COMPANION_MODE: "bambu"
+  COMPANION_MODE: bambu
   PRINTER_IP: ""
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
