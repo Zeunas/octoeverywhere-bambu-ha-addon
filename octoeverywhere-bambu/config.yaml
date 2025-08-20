@@ -15,10 +15,10 @@ build:
   dockerfile: Dockerfile
 
 options:
-  COMPANION_MODE: "bambu"
-  PRINTER_IP: ""
-  ACCESS_CODE: ""
-  SERIAL_NUMBER: ""
+  COMPANION_MODE: bambu
+  PRINTER_IP: 
+  ACCESS_CODE: 
+  SERIAL_NUMBER: 
 
 schema:
   COMPANION_MODE: str
