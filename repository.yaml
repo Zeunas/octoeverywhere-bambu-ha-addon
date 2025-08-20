@@ -1,3 +1,4 @@
-name: OctoEverywhere Bambu HAOS Add-ons
-url: https://github.com/Zeunas/octoeverywhere-ha-addon
-maintainer: Zeunas Zeunas@users.noreply.github.com
+  name: OctoEverywhere HAOS Add-ons
+  slug: octoeverywhere-ha-addons
+  description: Home Assistant OS add-ons for OctoEverywhere
+  url: https://github.com/Zeunas/octoeverywhere-ha-addon
