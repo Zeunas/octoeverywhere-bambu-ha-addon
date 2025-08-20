@@ -1,7 +1,7 @@
-name: "OctoEverywhere Companion"
-version: "2.0.0"
-slug: "octoeverywhere-bambu"
-description: "OctoEverywhere Companion for Bambu printers."
+name: "OctoEverywhere"
+version: "0.1.0"
+slug: "octoeverywhere"
+description: "Run OctoEverywhere inside Home Assistant OS"
 arch:
   - amd64
   - armv7
@@ -9,15 +9,17 @@ arch:
 startup: services
 boot: auto
 image: "octoeverywhere/octoeverywhere:latest"
+environment:
+  COMPANION_MODE: "bambu"
+ports:
+  8080/tcp: 8080
 options:
   COMPANION_MODE: "bambu"
+  PRINTER_IP: ""
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
-  PRINTER_IP: ""
 schema:
   COMPANION_MODE: str
-  ACCESS_CODE: str
-  SERIAL_NUMBER: str
   PRINTER_IP: str
-map:
-  - config:rw
+  ACCESS_CODE: str?
+  SERIAL_NUMBER: str?
