@@ -1,23 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-CONFIG_PATH=/data/options.json
-COMPANION_MODE=$(jq -r '.COMPANION_MODE' "$CONFIG_PATH")
-ACCESS_CODE=$(jq -r '.ACCESS_CODE' "$CONFIG_PATH")
-SERIAL_NUMBER=$(jq -r '.SERIAL_NUMBER' "$CONFIG_PATH")
-PRINTER_IP=$(jq -r '.PRINTER_IP' "$CONFIG_PATH")
-
-echo "ENV DEBUG:"
-echo "COMPANION_MODE=${COMPANION_MODE}"
-echo "PRINTER_IP=${PRINTER_IP}"
-echo "ACCESS_CODE=${ACCESS_CODE}"
-echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
-
-mkdir -p /data
-
-exec env \
-  COMPANION_MODE="$COMPANION_MODE" \
-  ACCESS_CODE="$ACCESS_CODE" \
-  SERIAL_NUMBER="$SERIAL_NUMBER" \
-  PRINTER_IP="$PRINTER_IP" \
-  /entrypoint.sh
+echo "[INFO] Starting OctoEverywhere Companion..."
+docker run \
+  --rm \
+  --name octoeverywhere_companion \
+  -e COMPANION_MODE="${COMPANION_MODE}" \
+  -e ACCESS_CODE="${ACCESS_CODE}" \
+  -e SERIAL_NUMBER="${SERIAL_NUMBER}" \
+  -e PRINTER_IP="${PRINTER_IP}" \
+  -v /config/octoeverywhere:/data \
+  octoeverywhere/octoeverywhere:latest
