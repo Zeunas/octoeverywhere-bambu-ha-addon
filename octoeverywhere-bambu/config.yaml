@@ -1,6 +1,6 @@
 name: "OctoEverywhere"
 version: "1.0.0"
-slug: "octoeverywhere"
+slug: "octoeverywhere-bambu"
 description: "Run OctoEverywhere inside Home Assistant OS"
 arch:
   - amd64
