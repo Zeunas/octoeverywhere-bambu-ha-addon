@@ -8,7 +8,7 @@ arch:
   - aarch64
 startup: services
 boot: auto
-init: false
+image: "octoeverywhere/octoeverywhere:latest"
 options:
   COMPANION_MODE: "bambu"
   ACCESS_CODE: ""
