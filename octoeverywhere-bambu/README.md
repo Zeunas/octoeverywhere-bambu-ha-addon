@@ -1,20 +1,22 @@
-# OctoEverywhere Bambu HA Add-on
+# OctoEverywhere Bambu HAOS Add-on
 
-This Home Assistant OS add-on wraps the OctoEverywhere Bambu Companion Docker container. It allows you to run OctoEverywhere inside HAOS for remote access and monitoring of your Bambu 3D printer.
-
-## Features
-- Simple setup for Bambu Connect printers
-- Managed by Home Assistant Supervisor
-- Automatic injection of printer IP, access code, and serial number
+This Home Assistant OS add-on runs the OctoEverywhere Bambu Companion Docker container for up to **two Bambu printers**.
 
 ## Configuration
-Set the following options in the add-on configuration:
 
-- `PRINTER_IP`: IP address of your Bambu printer
-- `ACCESS_CODE`: Your Bambu Connect access code
-- `SERIAL_NUMBER`: Serial number of your printer
+### Printer 1
+- `PRINTER1_IP`: IP address of your Bambu printer
+- `PRINTER1_ACCESS_CODE`: Your Bambu Connect access code
+- `PRINTER1_SERIAL_NUMBER`: Serial number of your printer
+
+### Printer 2 (optional)
+- `PRINTER2_IP`: IP address of your second Bambu printer
+- `PRINTER2_ACCESS_CODE`: Your second printer’s access code
+- `PRINTER2_SERIAL_NUMBER`: Serial number of your second printer
 
 ## Usage
-1. Install the add-on via HAOS Add-on Store (local or repository).
-2. Configure the options above.
-3. Start the add-on and check logs for the OctoEverywhere pairing link.
+1. Add the repository in HAOS Add-on Store.
+2. Install the add-on.
+3. Configure the printers.
+4. Start the add-on.
+5. Check logs for pairing links.
