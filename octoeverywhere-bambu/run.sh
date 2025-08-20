@@ -9,5 +9,5 @@ docker run \
   -e ACCESS_CODE="${ACCESS_CODE}" \
   -e SERIAL_NUMBER="${SERIAL_NUMBER}" \
   -e PRINTER_IP="${PRINTER_IP}" \
-  -v /config/octoeverywhere:/data \
+  -v /config/octoeverywhere-bambu:/data \
   octoeverywhere/octoeverywhere:latest
