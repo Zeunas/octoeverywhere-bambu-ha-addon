@@ -1,8 +1,8 @@
-# OctoEverywhere Bambu HAOS Add-ons Repository
+# OctoEverywhere HAOS Add-ons Repository
 
 This repository contains the Home Assistant OS add-on:
 
-- `octoeverywhere-bambu`: OctoEverywhere Bambu Companion add-on for HAOS
+- `octoeverywhere-bambu`: OctoEverywhere Companion add-on for HAOS
 
 ## Installation
 
