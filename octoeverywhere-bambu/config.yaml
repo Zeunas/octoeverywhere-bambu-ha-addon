@@ -1,11 +1,10 @@
 name: "OctoEverywhere Bambu"
-version: "1.2.0"
+version: "1.3.0"
 slug: "octoeverywhere_bambu"
-description: "Run OctoEverywhere Bambu Companion in Home Assistant"
-url: "https://github.com/Zeunas/octoeverywhere-ha-addon"
+description: "Home Assistant add-on for OctoEverywhere with Bambu printers"
 arch:
   - amd64
-  - aarch64
+  - arm64
 startup: services
 boot: auto
 options:
