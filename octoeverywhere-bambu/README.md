@@ -1,7 +1,6 @@
 # OctoEverywhere Bambu HAOS Add-on
 
-This add-on runs OctoEverywhere Bambu Companion for **one printer per instance**.  
-Install multiple instances if you have multiple Bambu printers.
+This add-on runs OctoEverywhere Bambu Companion for **one printer per instance**.
 
 ## Options
 
@@ -16,4 +15,3 @@ Install multiple instances if you have multiple Bambu printers.
 2. Install the add-on.
 3. Configure your printer details.
 4. Start the add-on.
-5. Repeat for additional printers (each instance gets its own configuration).
