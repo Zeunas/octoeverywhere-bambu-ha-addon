@@ -32,5 +32,5 @@ start_printer "$(bashio::config 'PRINTER2_IP')" \
               "$(bashio::config 'PRINTER2_SERIAL_NUMBER')" \
               "Printer2"
 
-# Wait to keep the container alive
+# Keep the container alive
 wait
