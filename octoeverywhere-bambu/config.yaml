@@ -1,5 +1,5 @@
 name: "OctoEverywhere Bambu"
-version: "1.0.0"
+version: "1.1.0"
 slug: "octoeverywhere_bambu"
 description: "Run OctoEverywhere Bambu Companion in Home Assistant"
 url: "https://github.com/Zeunas/octoeverywhere-ha-addon"
