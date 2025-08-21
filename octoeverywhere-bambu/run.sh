@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -e
 
+echo "===== OPTIONS.JSON ====="
+cat /data/options.json || echo "No options.json found"
+echo "========================"
+
+echo "===== ENVIRONMENT ====="
+env
+echo "========================"
+
 # Read HA add-on options
 PRINTER_IP=$(jq -r '.PRINTER_IP' /data/options.json)
 ACCESS_CODE=$(jq -r '.ACCESS_CODE' /data/options.json)
@@ -16,7 +24,7 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
-# Run Node binary directly with env vars inline
+# Run Node directly
 COMPANION_MODE=${COMPANION_MODE} \
 PRINTER_IP=${PRINTER_IP} \
 ACCESS_CODE=${ACCESS_CODE} \
