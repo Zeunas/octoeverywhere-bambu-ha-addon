@@ -8,5 +8,8 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
+# Make sure data directory exists
+mkdir -p /data
+
 # Hand control back to upstream entrypoint
 exec /entrypoint.sh
