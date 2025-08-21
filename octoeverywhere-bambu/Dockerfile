@@ -1,11 +1,11 @@
 FROM octoeverywhere/octoeverywhere:latest
 
-# Install jq to parse HA options.json
+# Install jq for parsing HA options.json
 RUN apk add --no-cache jq
 
-# Add our wrapper script
+# Add our wrapper
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Use our script as the entrypoint
+# Override the CMD
 CMD [ "/run.sh" ]
