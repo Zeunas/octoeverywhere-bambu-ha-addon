@@ -1,16 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/with-contenv bashio
+echo "Starting OctoEverywhere in Bambu Connect mode..."
 
-# Print environment for debugging
-echo "=============== OctoEverywhere ENV ==============="
-echo "COMPANION_MODE=${COMPANION_MODE}"
-echo "PRINTER_IP=${PRINTER_IP}"
-echo "ACCESS_CODE=${ACCESS_CODE}"
-echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
-echo "=================================================="
-
-# Run the upstream OctoEverywhere entrypoint
 exec /app/octoeverywhere/bin/octoeverywhere \
-    --mode "${COMPANION_MODE}" \
-    --ip "${PRINTER_IP}" \
-    --access "${ACCESS_CODE}" \
-    --serial "${SERIAL_NUMBER}"
+    --mode "bambu" \
+    --ip "$(bashio::config 'PRINTER_IP')" \
+    --access "$(bashio::config 'ACCESS_CODE')" \
+    --serial "$(bashio::config 'SERIAL_NUMBER')"
