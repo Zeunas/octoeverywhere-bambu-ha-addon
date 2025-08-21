@@ -2,7 +2,7 @@
 
 # Print environment for debugging
 echo "=============== OctoEverywhere ENV ==============="
-echo "COMPANION_MODE=bambu"
+echo "COMPANION_MODE=${COMPANION_MODE}"
 echo "PRINTER_IP=${PRINTER_IP}"
 echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
@@ -10,7 +10,7 @@ echo "=================================================="
 
 # Run the upstream OctoEverywhere entrypoint
 exec /app/octoeverywhere/bin/octoeverywhere \
-    --mode "bambu" \
+    --mode "${COMPANION_MODE}" \
     --ip "${PRINTER_IP}" \
     --access "${ACCESS_CODE}" \
     --serial "${SERIAL_NUMBER}"
