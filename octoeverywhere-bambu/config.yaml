@@ -16,4 +16,4 @@ schema:
   ACCESS_CODE: str
   SERIAL_NUMBER: str
   PRINTER_IP: str
-image: octoeverywhere/octoeverywhere:latest
+image: "octoeverywhere/octoeverywhere:latest"
