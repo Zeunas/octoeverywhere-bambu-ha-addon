@@ -1,8 +1,7 @@
 FROM octoeverywhere/octoeverywhere:latest
+RUN apk add --no-cache bash bashio
 
-# Copy run script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Run wrapper
 CMD [ "/run.sh" ]
