@@ -17,10 +17,11 @@ echo "=================================================="
 
 mkdir -p /data
 
-# Run the container’s default command with injected env vars
+# Just re-exec the container's *original* command,
+# but inject the required env vars
 exec env \
   COMPANION_MODE="$COMPANION_MODE" \
   PRINTER_IP="$PRINTER_IP" \
   ACCESS_CODE="$ACCESS_CODE" \
   SERIAL_NUMBER="$SERIAL_NUMBER" \
-  /usr/local/bin/node /app/octoeverywhere.js
+  "$@"
