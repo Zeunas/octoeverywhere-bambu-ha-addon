@@ -1,16 +1,10 @@
-#!/usr/bin/env bash
-
-# Print environment for debugging
-echo "=============== OctoEverywhere ENV ==============="
-echo "COMPANION_MODE=${COMPANION_MODE}"
-echo "PRINTER_IP=${PRINTER_IP}"
-echo "ACCESS_CODE=${ACCESS_CODE}"
-echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
-echo "=================================================="
-
-# Run the upstream OctoEverywhere entrypoint
-exec /app/octoeverywhere/bin/octoeverywhere \
-    --mode "${COMPANION_MODE}" \
-    --ip "${PRINTER_IP}" \
-    --access "${ACCESS_CODE}" \
-    --serial "${SERIAL_NUMBER}"
+#!/usr/bin/with-contenv bashio
+echo "Starting OctoEverywhere Bambu Connect..."
+exec docker run \
+  --rm \
+  -e COMPANION_MODE=bambu \
+  -e ACCESS_CODE="${ACCESS_CODE}" \
+  -e SERIAL_NUMBER="${SERIAL_NUMBER}" \
+  -e PRINTER_IP="${PRINTER_IP}" \
+  -v "$(pwd)/data:/data" \
+  octoeverywhere/octoeverywhere:latest
