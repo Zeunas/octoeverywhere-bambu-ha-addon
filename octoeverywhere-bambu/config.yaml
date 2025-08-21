@@ -1,5 +1,5 @@
 name: "OctoEverywhere Bambu"
-version: "0.10.0"
+version: "0.12.0"
 slug: "octoeverywhere_bambu"
 description: "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer. Install multiple instances for multiple printers."
 arch:
@@ -9,6 +9,11 @@ arch:
 startup: services
 boot: auto
 init: false
+
+# Build from our Dockerfile, not pull image
+build:
+  context: .
+  dockerfile: Dockerfile
 
 options:
   PRINTER_IP: ""
