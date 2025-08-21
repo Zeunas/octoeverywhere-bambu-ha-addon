@@ -1,8 +1,8 @@
 FROM octoeverywhere/octoeverywhere:latest
 
-# Add the run script
+# Copy our wrapper script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Use our script as CMD
+# Use our script as the default command
 CMD [ "/run.sh" ]
