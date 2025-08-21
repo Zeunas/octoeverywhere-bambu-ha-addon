@@ -17,10 +17,10 @@ options:
   SERIAL_NUMBER: ""
 
 schema:
-  COMPANION_MODE: str
-  PRINTER_IP: str
-  ACCESS_CODE: str
-  SERIAL_NUMBER: str
+  COMPANION_MODE: string
+  PRINTER_IP: string
+  ACCESS_CODE: string
+  SERIAL_NUMBER: string
 
 map:
   - config:rw
