@@ -1,8 +1,8 @@
 {
   "name": "OctoEverywhere Bambu",
-  "version": "0.1.0",
+  "version": "0.26.0",
   "slug": "octoeverywhere_bambu",
-  "description": "Home Assistant OS add-on to run OctoEverywhere in Bambu Connect mode. Provides remote access and monitoring for your Bambu 3D printer inside HAOS.",
+  "description": "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer.",
   "arch": ["amd64", "armv7", "aarch64"],
   "startup": "services",
   "boot": "auto",
