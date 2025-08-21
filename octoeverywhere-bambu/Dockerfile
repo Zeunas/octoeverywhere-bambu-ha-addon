@@ -1,11 +1,11 @@
-FROM octoeverywhere/octoeverywhere:latest
+FROM ghcr.io/home-assistant/amd64-base:latest
 
-# Install jq for parsing HA options.json
-RUN apk add --no-cache jq
+# Required for JSON parsing and docker execution
+RUN apk add --no-cache bash jq docker-cli
 
-# Add wrapper script
+# Copy our run script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Use wrapper as CMD
+# Start wrapper script
 CMD [ "/run.sh" ]
