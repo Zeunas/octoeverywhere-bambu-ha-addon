@@ -8,14 +8,18 @@ arch:
 startup: services
 boot: auto
 host_network: true
+
 options:
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
   PRINTER_IP: ""
+
 schema:
   ACCESS_CODE: str
   SERIAL_NUMBER: str
   PRINTER_IP: str
+
 image: "octoeverywhere/octoeverywhere:latest"
+
 map:
   - config:rw
