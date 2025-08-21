@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Load HA add-on options
+COMPANION_MODE=$(bashio::config 'COMPANION_MODE')
+PRINTER_IP=$(bashio::config 'PRINTER_IP')
+ACCESS_CODE=$(bashio::config 'ACCESS_CODE')
+SERIAL_NUMBER=$(bashio::config 'SERIAL_NUMBER')
 
 echo "=============== OctoEverywhere ENV ==============="
 echo "COMPANION_MODE=${COMPANION_MODE}"
@@ -7,7 +12,7 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
-# Start the companion directly
+# Start OctoEverywhere directly
 exec node /app/octoeverywhere/index.js \
   --mode "${COMPANION_MODE}" \
   --ip "${PRINTER_IP}" \
