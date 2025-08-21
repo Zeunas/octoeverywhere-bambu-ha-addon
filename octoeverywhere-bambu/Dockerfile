@@ -1,9 +1,14 @@
-# Use the upstream OctoEverywhere image as base
-FROM octoeverywhere/octoeverywhere:latest
+FROM ghcr.io/home-assistant/base:latest
 
-# Copy our run wrapper
+# Install required dependencies
+RUN apk add --no-cache bash nodejs npm
+
+# Copy OctoEverywhere code (or use upstream image content)
+COPY octoeverywhere /app/octoeverywhere
+
+# Copy the HAOS wrapper script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Use our wrapper as entrypoint
+# Use our script as CMD
 CMD [ "/run.sh" ]
