@@ -4,10 +4,12 @@ description: "Run OctoEverywhere in Bambu Connect mode inside Home Assistant OS"
 version: "1.0.0"
 arch:
   - amd64
+  - armv7
   - aarch64
-startup: "services"
-boot: "auto"
-host_network: true
+startup: services
+boot: auto
+#host_network: true
+init: false
 
 options:
   ACCESS_CODE: ""
@@ -19,4 +21,4 @@ schema:
   SERIAL_NUMBER: str
   PRINTER_IP: str
 
-image: "octoeverywhere/octoeverywhere:latest"
+image: octoeverywhere/octoeverywhere:latest
