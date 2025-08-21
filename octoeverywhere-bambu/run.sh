@@ -1,14 +1,12 @@
-#!/usr/bin/env bash
-# Exit on any error
+#!/usr/bin/env bashio
 set -e
 
-# Load options from HA Supervisor add-on configuration
-COMPANION_MODE="${COMPANION_MODE:-bambu}"
-PRINTER_IP="${PRINTER_IP:-}"
-ACCESS_CODE="${ACCESS_CODE:-}"
-SERIAL_NUMBER="${SERIAL_NUMBER:-}"
+# Load configuration
+COMPANION_MODE=$(bashio::config "COMPANION_MODE")
+PRINTER_IP=$(bashio::config "PRINTER_IP")
+ACCESS_CODE=$(bashio::config "ACCESS_CODE")
+SERIAL_NUMBER=$(bashio::config "SERIAL_NUMBER")
 
-# Print environment for debugging
 echo "=============== OctoEverywhere ENV ==============="
 echo "COMPANION_MODE=${COMPANION_MODE}"
 echo "PRINTER_IP=${PRINTER_IP}"
@@ -16,14 +14,8 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
-# Check that required variables are set
-if [[ -z "${PRINTER_IP}" || -z "${ACCESS_CODE}" || -z "${SERIAL_NUMBER}" ]]; then
-  echo "ERROR: Missing required environment variables!"
-  exit 1
-fi
-
-# Run the OctoEverywhere entrypoint with the HA options
-exec /entrypoint.sh \
+# Run OctoEverywhere with the provided config
+exec /usr/local/bin/node /app/octoeverywhere/main.js \
   --mode "${COMPANION_MODE}" \
   --ip "${PRINTER_IP}" \
   --access "${ACCESS_CODE}" \
