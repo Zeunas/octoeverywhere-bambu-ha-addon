@@ -1,5 +1,5 @@
 name: "OctoEverywhere Bambu"
-version: "1.0.0"
+version: "0.29.0"
 slug: "octoeverywhere_bambu"
 description: "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer."
 arch:
@@ -17,10 +17,10 @@ options:
   SERIAL_NUMBER: ""
 
 schema:
-  COMPANION_MODE: string
-  PRINTER_IP: string
-  ACCESS_CODE: string
-  SERIAL_NUMBER: string
+  COMPANION_MODE: str
+  PRINTER_IP: str
+  ACCESS_CODE: str
+  SERIAL_NUMBER: str
 
 map:
   - config:rw
