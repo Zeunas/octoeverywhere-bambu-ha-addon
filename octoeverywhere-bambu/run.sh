@@ -1,7 +1,6 @@
-#!/usr/bin/env sh
-set -e
+#!/usr/bin/env bash
 
-# Print environment variables for debugging
+# Print environment for debugging
 echo "=============== OctoEverywhere ENV ==============="
 echo "COMPANION_MODE=${COMPANION_MODE}"
 echo "PRINTER_IP=${PRINTER_IP}"
@@ -9,9 +8,9 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
-# Run OctoEverywhere with provided options
-exec octoeverywhere \
-  --mode "${COMPANION_MODE}" \
-  --ip "${PRINTER_IP}" \
-  --access "${ACCESS_CODE}" \
-  --serial "${SERIAL_NUMBER}"
+# Run the upstream OctoEverywhere entrypoint
+exec /app/octoeverywhere/bin/octoeverywhere \
+    --mode "${COMPANION_MODE}" \
+    --ip "${PRINTER_IP}" \
+    --access "${ACCESS_CODE}" \
+    --serial "${SERIAL_NUMBER}"
