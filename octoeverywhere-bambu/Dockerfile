@@ -1,11 +1,12 @@
-FROM ghcr.io/home-assistant/amd64-base:latest
+# Use a multi-arch HA base image for aarch64
+FROM ghcr.io/home-assistant/aarch64-base:latest
 
-# Required for JSON parsing and docker execution
-RUN apk add --no-cache bash jq docker-cli
+# Install required packages
+RUN apk add --no-cache bash jq
 
-# Copy our run script
+# Copy our wrapper script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Start wrapper script
+# Use our wrapper script as CMD
 CMD [ "/run.sh" ]
