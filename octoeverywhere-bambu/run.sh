@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/env bash
 set -e
 
 echo "=============== OctoEverywhere ENV ==============="
@@ -8,5 +8,5 @@ echo "ACCESS_CODE=${ACCESS_CODE}"
 echo "SERIAL_NUMBER=${SERIAL_NUMBER}"
 echo "=================================================="
 
-# Exec into the upstream entrypoint
+# Hand control back to upstream entrypoint
 exec /entrypoint.sh
