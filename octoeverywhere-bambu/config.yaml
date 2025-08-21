@@ -17,3 +17,5 @@ schema:
   SERIAL_NUMBER: str
   PRINTER_IP: str
 image: "octoeverywhere/octoeverywhere:latest"
+map:
+  - config:rw
