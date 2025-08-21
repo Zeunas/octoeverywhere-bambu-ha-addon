@@ -9,16 +9,19 @@ arch:
 startup: services
 boot: auto
 init: false
-#host_network: true
 
 options:
+  COMPANION_MODE: "bambu"
+  PRINTER_IP: ""
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
-  PRINTER_IP: ""
 
 schema:
+  COMPANION_MODE: str
+  PRINTER_IP: str
   ACCESS_CODE: str
   SERIAL_NUMBER: str
-  PRINTER_IP: str
 
-image: "octoeverywhere/octoeverywhere:latest"
+map:
+  - config:rw
+  - data:rw
