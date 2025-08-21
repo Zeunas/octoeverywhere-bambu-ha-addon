@@ -1,12 +1,12 @@
-name: OctoEverywhere Bambu Connect
-slug: octoeverywhere_bambu
+name: "OctoEverywhere Bambu Connect"
+slug: "octoeverywhere_bambu"
 description: "Run OctoEverywhere in Bambu Connect mode inside Home Assistant OS"
 version: "1.0.0"
 arch:
   - amd64
   - aarch64
-startup: services
-boot: auto
+startup: "services"
+boot: "auto"
 host_network: true
 
 options:
