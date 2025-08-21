@@ -1,12 +1,8 @@
-# Use a multi-arch HA base image for aarch64
-FROM ghcr.io/home-assistant/aarch64-base:latest
+FROM octoeverywhere/octoeverywhere:latest
 
-# Install required packages
-RUN apk add --no-cache bash jq
-
-# Copy our wrapper script
+# Copy run script
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
-# Use our wrapper script as CMD
+# Run wrapper
 CMD [ "/run.sh" ]
