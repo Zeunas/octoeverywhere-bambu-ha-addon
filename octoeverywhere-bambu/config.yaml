@@ -9,7 +9,7 @@ arch:
 startup: services
 boot: auto
 init: false
-host_network: true
+#host_network: true
 
 options:
   ACCESS_CODE: ""
