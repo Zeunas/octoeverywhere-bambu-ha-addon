@@ -8,7 +8,7 @@ arch:
 startup: "services"
 boot: "auto"
 host_network: true  # if needed to access your printer on LAN
-environment:
+options:
   ACCESS_CODE: null
   SERIAL_NUMBER: null
   PRINTER_IP: null
