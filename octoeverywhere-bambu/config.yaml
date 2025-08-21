@@ -15,11 +15,8 @@ options:
   PRINTER_IP: ""
 
 schema:
-  ACCESS_CODE: str
-  SERIAL_NUMBER: str
-  PRINTER_IP: str
+  ACCESS_CODE: string
+  SERIAL_NUMBER: string
+  PRINTER_IP: string
 
 image: "octoeverywhere/octoeverywhere:latest"
-
-map:
-  - config:rw
