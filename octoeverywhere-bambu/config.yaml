@@ -1,5 +1,5 @@
 name: "OctoEverywhere Bambu"
-version: "0.8.0"
+version: "0.9.0"
 slug: "octoeverywhere_bambu"
 description: "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer. Install multiple instances for multiple printers."
 arch:
