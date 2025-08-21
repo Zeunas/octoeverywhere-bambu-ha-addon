@@ -1,29 +1,20 @@
-name: "OctoEverywhere Bambu"
-version: "1.1.0"
+name: "OctoEverywhere Bambu Connect"
 slug: "octoeverywhere_bambu"
-description: "Home Assistant OS add-on to run OctoEverywhere Bambu Companion for a single printer."
+description: "Run OctoEverywhere in Bambu Connect mode inside Home Assistant OS"
+version: "1.0.0"
 arch:
-  - armhf
-  - armv7
-  - aarch64
   - amd64
-  - i386
-startup: services
-boot: auto
-init: false
+  - aarch64
+startup: "services"
+boot: "auto"
+host_network: true
 
 options:
-  COMPANION_MODE: "bambu"
-  PRINTER_IP: ""
   ACCESS_CODE: ""
   SERIAL_NUMBER: ""
+  PRINTER_IP: ""
 
 schema:
-  COMPANION_MODE: str
-  PRINTER_IP: str
   ACCESS_CODE: str
   SERIAL_NUMBER: str
-
-map:
-  - config:rw
-  - data:rw
+  PRINTER_IP: str
